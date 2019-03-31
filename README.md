@@ -5,7 +5,7 @@ Topicos:
 3. Recopilacion datos usuario: LOGS windows y navegacion web.
 4. Envio datos limpios y formateados a un DataWareHouse.
 
-## [1.Establecer nucleos activos del procesador en windows](https://drive.google.com/open?id=1krnGFfk5Gb-iPgyc14iGREDCppLntUGa/)
+## [1.Establecer nucleos activos del procesador en windows](https://drive.google.com/open?id=1krnGFfk5Gb-iPgyc14iGREDCppLntUGa)
 Nota: Esto es posible unicamente cuando nuestro procesador tiene mas de un nucleo.
 
 
