@@ -8,3 +8,5 @@ C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteN
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.exe
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.pdb
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.MigatteNoGokui.resources
+E:\wamp64\www\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.exe
+E:\wamp64\www\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.pdb
