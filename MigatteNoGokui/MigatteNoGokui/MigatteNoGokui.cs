@@ -57,27 +57,12 @@ namespace MigatteNoGokui
 
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void pictureBox4_MouseIn(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void panel1_MouseHover(object sender, PaintEventArgs e)
-        {
-            panel1.BackColor = Color.Blue;
-
-        }
-
+        
         private void button2_Click_1(object sender, EventArgs e)
         {
        
@@ -86,6 +71,11 @@ namespace MigatteNoGokui
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
