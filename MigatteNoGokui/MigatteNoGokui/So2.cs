@@ -25,7 +25,7 @@ namespace MigatteNoGokui
 
         public int validarEjecucion()
         {
-            return true;
+            return 0;
         }
 
         public Boolean obtenerDatos()
