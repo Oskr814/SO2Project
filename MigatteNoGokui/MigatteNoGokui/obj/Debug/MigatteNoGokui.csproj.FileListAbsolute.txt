@@ -1,7 +1,6 @@
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\Debug\MigatteNoGokui.exe.config
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\Debug\MigatteNoGokui.exe
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\Debug\MigatteNoGokui.pdb
-C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.csprojAssemblyReference.cache
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.Properties.Resources.resources
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.csproj.GenerateResource.cache
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.csproj.CoreCompileInputs.cache
@@ -10,3 +9,6 @@ C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteN
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.MigatteNoGokui.resources
 E:\wamp64\www\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.exe
 E:\wamp64\www\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.pdb
+C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.Estado.resources
+C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.Rendimiento.resources
+C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\Debug\MigatteNoGokui.csprojAssemblyReference.cache
