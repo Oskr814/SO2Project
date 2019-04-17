@@ -18,7 +18,10 @@ namespace MigatteNoGokui
         public Rendimiento()
         {
             InitializeComponent();
+
             sistema.validarEjecucion();
+            
+
         }
 
         private void label9_Click(object sender, EventArgs e)

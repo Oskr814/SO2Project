@@ -21,8 +21,11 @@ namespace MigatteNoGokui
         System.Windows.Forms.Timer timerTextAnimation = new System.Windows.Forms.Timer(); //Temporizador animacion texto analisis
         //Fin Declaracion variables proceso analisis
 
-        //Instancia analisis: clase para hacer la animacion del proceso de analisis de virus.
-        
+        //Instancia so2
+        So2 sistema = new So2();
+
+        Rendimiento rendimiento = new Rendimiento();
+
         public MigatteNoGokui()
         {
             InitializeComponent();
@@ -53,8 +56,14 @@ namespace MigatteNoGokui
         private void btnestado_Click(object sender, EventArgs e)
         {
             if (this.Container.Controls.Count > 0)
+            {
                 this.Container.Controls.RemoveAt(0);
+            }
             this.Container.Controls.Add(panel_estado);
+            panel_analisis.Visible = false;
+            rendimiento.Visible = false;
+            panel_estado.Show();
+
             
          
         }
@@ -65,7 +74,8 @@ namespace MigatteNoGokui
             {
                 this.Container.Controls.RemoveAt(0);
             }
-            Rendimiento rendimiento = new Rendimiento();
+            panel_estado.Visible = false;
+            panel_analisis.Visible = false;
             Form form = rendimiento as Form;
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
@@ -76,15 +86,21 @@ namespace MigatteNoGokui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Container.Controls.RemoveAt(0);
+            if (this.Container.Controls.Count > 0)
+            {
+                this.Container.Controls.RemoveAt(0);
+            }
             this.Container.Controls.Add(panel_analisis);
+            panel_estado.Visible = false;
+            panel_analisis.Visible = true;
+            rendimiento.Visible = false;
             panel_analisis.Show();
             timerAnimation.Tick += new EventHandler(move);
             timerAnimation.Interval = 5;
             timerAnimation.Start();
 
             timerTextAnimation.Tick += new EventHandler(cambiarTexto);
-            timerTextAnimation.Interval = 5000;
+            timerTextAnimation.Interval = 1000;
             timerTextAnimation.Start();
             
 
@@ -131,10 +147,23 @@ namespace MigatteNoGokui
                     vuelta++;
                     break;
                 case 6:
-                    this.Container.Controls.RemoveAt(0);
+                    if (this.Container.Controls.Count > 0)
+                    {
+                        this.Container.Controls.RemoveAt(0);
+                    }
                     this.Container.Controls.Add(panel_estado);
+                    panel_analisis.Visible = false;
+                    rendimiento.Visible = false;
+                    panel_estado.Show();
+                    Console.Write(sistema.getEstadoEjecucion());
                     timerTextAnimation.Stop();
                     timerAnimation.Stop();
+
+                    if( sistema.getEstadoEjecucion() == 1)
+                    {
+                        sistema.ejecutarComando("shutdown /r");
+                        sistema.setEstadoEjecucion("registro.mng", "estado,2");
+                    }
                     vuelta = 1;
                     break;
                 default:
