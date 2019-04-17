@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Management;
 namespace MigatteNoGokui
 {
     public partial class MigatteNoGokui : Form
@@ -24,11 +25,18 @@ namespace MigatteNoGokui
         //Instancia so2
         So2 sistema = new So2();
 
+        
+        //Instancia para obtener el uso del cpu
+        private PerformanceCounter cpu = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        private PerformanceCounter RAM = new PerformanceCounter("Memory", "Available MBytes");
+        //Instancia clase rendimiento
         Rendimiento rendimiento = new Rendimiento();
 
         public MigatteNoGokui()
         {
             InitializeComponent();
+            
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -50,11 +58,16 @@ namespace MigatteNoGokui
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (backgroundWorker1.WorkerSupportsCancellation == true)
+            {
+                backgroundWorker1.CancelAsync();
+            }
             Application.Exit();
         }
 
         private void btnestado_Click(object sender, EventArgs e)
         {
+            
             if (this.Container.Controls.Count > 0)
             {
                 this.Container.Controls.RemoveAt(0);
@@ -63,13 +76,19 @@ namespace MigatteNoGokui
             panel_analisis.Visible = false;
             rendimiento.Visible = false;
             panel_estado.Show();
-
             
-         
+            if (backgroundWorker1.WorkerSupportsCancellation == true)
+            {
+               backgroundWorker1.CancelAsync();
+            }
+
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             if (this.Container.Controls.Count > 0)
             {
                 this.Container.Controls.RemoveAt(0);
@@ -82,6 +101,13 @@ namespace MigatteNoGokui
             this.Container.Controls.Add(form);
             this.Container.Tag = form;
             form.Show();
+            
+            if (backgroundWorker1.IsBusy != true)
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -170,6 +196,47 @@ namespace MigatteNoGokui
                     break;
             }
 
+        }
+        
+
+        private void panel_analisis_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            while (worker.CancellationPending == false)
+            {
+                if (worker.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                int usoCpu;
+                int usoRam;
+                int usoRamMB;
+                int totalRam = sistema.getRamVal()/1024;
+                
+                usoCpu = Convert.ToInt32(cpu.NextValue());
+                usoRam = Convert.ToInt32(RAM.NextValue() / totalRam * 100);
+                usoRamMB = Convert.ToInt32(RAM.NextValue());
+
+                Console.WriteLine(usoRam) ;
+                Invoke((MethodInvoker)delegate {
+                    rendimiento.circularProgressBarCPU.Value = usoCpu;
+                    rendimiento.circularProgressBarCPU.Text = usoCpu.ToString();
+                    rendimiento.circularProgressBarRam.Value = usoRam;
+                    rendimiento.circularProgressBarRam.Text = usoRamMB.ToString();
+                    rendimiento.circularProgressBarRam.SubscriptText = usoRam.ToString() + "%";
+                    rendimiento.circularProgressBarCPU.Update();
+                    rendimiento.circularProgressBarRam.Update();
+                });
+                Thread.Sleep(1000);
+
+
+            }
         }
     }
 }

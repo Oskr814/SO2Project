@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,13 +16,13 @@ namespace MigatteNoGokui
     {
         //instancia clase so2 
         So2 sistema = new So2();
-
+        private PerformanceCounter cpu = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         public Rendimiento()
         {
             InitializeComponent();
-
             sistema.validarEjecucion();
-            
+       
+
 
         }
 
@@ -31,6 +33,12 @@ namespace MigatteNoGokui
 
         private void label10_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
 
         }
     }

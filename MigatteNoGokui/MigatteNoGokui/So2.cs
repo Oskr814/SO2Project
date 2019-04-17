@@ -54,6 +54,48 @@ namespace MigatteNoGokui
             }
         }
 
+        public int getNumberOfCores()
+        {
+            int numeroCores = 0;
+
+            ManagementObjectSearcher query = new ManagementObjectSearcher(
+                       "select * from Win32_Processor"
+                );
+
+
+            foreach (ManagementObject info in query.Get())
+            {
+                foreach (PropertyData propiedad in info.Properties)
+                {
+                    if (propiedad.Name == "NumberOfCores")
+                    {
+                        numeroCores = Convert.ToInt32(propiedad.Value);
+                    }
+                }
+            }
+
+            return numeroCores;
+        }
+
+        public int getRamVal()
+        {
+            
+            ManagementObjectSearcher ramInfo = new ManagementObjectSearcher(
+                       "SELECT * FROM Win32_OperatingSystem"
+                );
+            ManagementObjectCollection results = ramInfo.Get();
+
+
+            
+            foreach (ManagementObject result in results)
+            {
+                return Convert.ToInt32(result["TotalVisibleMemorySize"]);
+            }
+
+            return 0;
+            
+        }
+
 
 
         public Boolean ejecutarArchivo(string nombre)
@@ -121,6 +163,17 @@ namespace MigatteNoGokui
             }
 
             return 0;
+        }
+
+        public int getCpuState()
+        {
+            PerformanceCounter cpu = new PerformanceCounter();
+            cpu.CategoryName = "Processor";
+            cpu.CounterName = "% Processor Time";
+            cpu.InstanceName = "_Total";
+            return Convert.ToInt32(cpu.NextValue());
+            
+            
         }
     }
 }
