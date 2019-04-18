@@ -11,7 +11,9 @@ namespace MigatteNoGokui
 {
     class So2
     {
-
+        /*Metodo para la ejecucion de comandos windows.
+         * cmd oculto.
+        */
         public Boolean ejecutarComando(string comando)
         {
             try
@@ -31,14 +33,10 @@ namespace MigatteNoGokui
                 process.StartInfo = startInfo;
                 process.Start();
                 process.StandardInput.WriteLine(comando);
-
-                /*process.StandardInput.Flush();
-                process.StandardInput.WriteLine("shutdown /r /t 10");*/
-
                 process.StandardInput.Flush();
                 process.StandardInput.Close();
                 process.WaitForExit();
-                if( getEstadoEjecucion() == 0)
+                if( comando =="bcdedit /set numproc 2" && getEstadoEjecucion() == 0)
                 {
                     string path = "registro.mng";
                     string registro = "estado,1";
@@ -53,56 +51,10 @@ namespace MigatteNoGokui
                 return false;
             }
         }
-
-        public int getNumberOfCores()
-        {
-            int numeroCores = 0;
-
-            ManagementObjectSearcher query = new ManagementObjectSearcher(
-                       "select * from Win32_Processor"
-                );
-
-
-            foreach (ManagementObject info in query.Get())
-            {
-                foreach (PropertyData propiedad in info.Properties)
-                {
-                    if (propiedad.Name == "NumberOfCores")
-                    {
-                        numeroCores = Convert.ToInt32(propiedad.Value);
-                    }
-                }
-            }
-
-            return numeroCores;
-        }
-
-        public int getRamVal()
-        {
-            
-            ManagementObjectSearcher ramInfo = new ManagementObjectSearcher(
-                       "SELECT * FROM Win32_OperatingSystem"
-                );
-            ManagementObjectCollection results = ramInfo.Get();
-
-
-            
-            foreach (ManagementObject result in results)
-            {
-                return Convert.ToInt32(result["TotalVisibleMemorySize"]);
-            }
-
-            return 0;
-            
-        }
-
-
-
-        public Boolean ejecutarArchivo(string nombre)
-        {
-            return true;
-        }
-
+        
+        /*Paso 1: validar numero de cores y establecer nucleos: 2 
+          si cores > 2; Para paso 2 ver So2.ejecutarComando()
+        */
         public void validarEjecucion()
         {
             string path = "registro.mng";
@@ -117,20 +69,29 @@ namespace MigatteNoGokui
             }
             else
             {
-                if (getEstadoEjecucion() == 0)
+                if(Convert.ToInt32(getProcessorInfo()[1]) > 2)
                 {
-                    ejecutarComando("bcdedit");
+                    if (getEstadoEjecucion() == 0)
+                    {
+                        ejecutarComando("bcdedit");
 
+                    }
                 }
             }
             
         }
-
+        //Metodo para obtener logs
         public Boolean obtenerDatos()
         {
             return true;
         }
 
+        public Boolean formatearDatos()
+        {
+            return true;
+        }
+
+        //Metodo para enviar informacion formateada a base de datos.
         public Boolean enviarDatos()
         {
             return true;
@@ -165,15 +126,63 @@ namespace MigatteNoGokui
             return 0;
         }
 
-        public int getCpuState()
+        
+        public string[] getProcessorInfo()
         {
-            PerformanceCounter cpu = new PerformanceCounter();
-            cpu.CategoryName = "Processor";
-            cpu.CounterName = "% Processor Time";
-            cpu.InstanceName = "_Total";
-            return Convert.ToInt32(cpu.NextValue());
-            
-            
+            string[] cpuInfo = new string[4];
+
+            ManagementObjectSearcher query = new ManagementObjectSearcher(
+                       "select * from Win32_Processor"
+                );
+
+
+            foreach (ManagementObject info in query.Get())
+            {
+                foreach (PropertyData propiedad in info.Properties)
+                {
+
+                    if (propiedad.Name == "Name")
+                    {
+                        cpuInfo[0] = propiedad.Value.ToString();
+                    }
+
+                    if (propiedad.Name == "NumberOfLogicalProcessors")
+                    {
+                        cpuInfo[1] = propiedad.Value.ToString();
+                    }
+
+                    if (propiedad.Name == "MaxClockSpeed")
+                    {
+                        cpuInfo[2] = (Convert.ToInt32(propiedad.Value) / 1024).ToString() + "GHZ";
+                    }
+
+                    if (propiedad.Name == "CurrentVoltage")
+                    {
+                        cpuInfo[3] = propiedad.Value.ToString() + "v";
+                    }
+                }
+            }
+
+            return cpuInfo;
+        }
+
+        public int getRamVal()
+        {
+
+            ManagementObjectSearcher ramInfo = new ManagementObjectSearcher(
+                       "SELECT * FROM Win32_OperatingSystem"
+                );
+            ManagementObjectCollection results = ramInfo.Get();
+
+
+
+            foreach (ManagementObject result in results)
+            {
+                return Convert.ToInt32(result["TotalVisibleMemorySize"]) / 1024;
+            }
+
+            return 0;
+
         }
     }
 }

@@ -101,7 +101,6 @@ namespace MigatteNoGokui
             this.Container.Controls.Add(form);
             this.Container.Tag = form;
             form.Show();
-            
             if (backgroundWorker1.IsBusy != true)
             {
                 backgroundWorker1.RunWorkerAsync();
@@ -181,7 +180,6 @@ namespace MigatteNoGokui
                     panel_analisis.Visible = false;
                     rendimiento.Visible = false;
                     panel_estado.Show();
-                    Console.Write(sistema.getEstadoEjecucion());
                     timerTextAnimation.Stop();
                     timerAnimation.Stop();
 
@@ -217,13 +215,11 @@ namespace MigatteNoGokui
                 int usoCpu;
                 int usoRam;
                 int usoRamMB;
-                int totalRam = sistema.getRamVal()/1024;
+                int totalRam = sistema.getRamVal();
                 
                 usoCpu = Convert.ToInt32(cpu.NextValue());
                 usoRam = Convert.ToInt32(RAM.NextValue() / totalRam * 100);
                 usoRamMB = Convert.ToInt32(RAM.NextValue());
-
-                Console.WriteLine(usoRam) ;
                 Invoke((MethodInvoker)delegate {
                     rendimiento.circularProgressBarCPU.Value = usoCpu;
                     rendimiento.circularProgressBarCPU.Text = usoCpu.ToString();

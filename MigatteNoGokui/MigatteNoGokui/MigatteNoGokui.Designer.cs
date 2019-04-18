@@ -48,7 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel_analisis = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelProcesoAnalisis = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_progressbar_container = new System.Windows.Forms.Panel();
             this.panel_progressbar = new System.Windows.Forms.Panel();
@@ -216,8 +216,8 @@
             // 
             this.Container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(65)))), ((int)(((byte)(86)))));
             this.Container.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Container.Controls.Add(this.panel_estado);
             this.Container.Controls.Add(this.panel_analisis);
+            this.Container.Controls.Add(this.panel_estado);
             this.Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Container.Location = new System.Drawing.Point(137, 36);
             this.Container.Margin = new System.Windows.Forms.Padding(2);
@@ -295,7 +295,7 @@
             // 
             // panel_analisis
             // 
-            this.panel_analisis.Controls.Add(this.label4);
+            this.panel_analisis.Controls.Add(this.labelProcesoAnalisis);
             this.panel_analisis.Controls.Add(this.pictureBox1);
             this.panel_analisis.Controls.Add(this.panel_progressbar_container);
             this.panel_analisis.Controls.Add(this.label_analisis);
@@ -307,15 +307,15 @@
             this.panel_analisis.Visible = false;
             this.panel_analisis.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_analisis_Paint);
             // 
-            // label4
+            // labelProcesoAnalisis
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(351, 284);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Por favor espere...";
+            this.labelProcesoAnalisis.AutoSize = true;
+            this.labelProcesoAnalisis.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelProcesoAnalisis.Location = new System.Drawing.Point(351, 284);
+            this.labelProcesoAnalisis.Name = "labelProcesoAnalisis";
+            this.labelProcesoAnalisis.Size = new System.Drawing.Size(94, 13);
+            this.labelProcesoAnalisis.TabIndex = 5;
+            this.labelProcesoAnalisis.Text = "Por favor espere...";
             // 
             // pictureBox1
             // 
@@ -418,7 +418,7 @@
         private System.Windows.Forms.Panel panel_progressbar;
         private System.Windows.Forms.Label label_analisis;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelProcesoAnalisis;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
