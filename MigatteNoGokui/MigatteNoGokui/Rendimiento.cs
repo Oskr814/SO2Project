@@ -16,32 +16,17 @@ namespace MigatteNoGokui
     {
         //instancia clase so2 
         So2 sistema = new So2();
-        private PerformanceCounter cpu = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        
         public Rendimiento()
         {
             InitializeComponent();
+            //Validar si ya se realizo el proceso de apagar los nucleos en caso de que sea oportuno
             sistema.validarEjecucion();
        
 
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            
-
-        }
-        
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

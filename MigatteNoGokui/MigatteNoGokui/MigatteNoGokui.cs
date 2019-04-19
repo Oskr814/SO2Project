@@ -14,26 +14,25 @@ namespace MigatteNoGokui
 {
     public partial class MigatteNoGokui : Form
     {   
-        //Inicio Declaracion variables proceso analisis
+        //Declaracion variables proceso analisis
         int vuelta = 1; //Contador proceso analisis
         
         //Timers
         System.Windows.Forms.Timer timerAnimation = new System.Windows.Forms.Timer(); //Temporizador para animacion progressbar
-        System.Windows.Forms.Timer timerTextAnimation = new System.Windows.Forms.Timer(); //Temporizador animacion texto analisis
+        System.Windows.Forms.Timer timerTextAnimation = new System.Windows.Forms.Timer(); //Temporizador animacion texto analisis  
         
-        //Fin Declaracion variables proceso analisis
 
         //Instancia so2
         So2 sistema = new So2();
-
         
-        //Instancia para obtener el uso del cpu
+        //Instancias para obtener el uso del cpu y la ram
         private PerformanceCounter cpu = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         private PerformanceCounter RAM = new PerformanceCounter("Memory", "Available MBytes");
+
         //Instancia clase rendimiento
         Rendimiento rendimiento = new Rendimiento();
 
-        
+        //Constructor
         public MigatteNoGokui()
         {
             InitializeComponent();
@@ -57,7 +56,12 @@ namespace MigatteNoGokui
 
         }
 
+        private void panel_analisis_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        //Exit
         private void button4_Click(object sender, EventArgs e)
         {
             if (backgroundWorker1.WorkerSupportsCancellation == true)
@@ -69,20 +73,27 @@ namespace MigatteNoGokui
 
         private void btnestado_Click(object sender, EventArgs e)
         {
+            //Similar a programacion web, cambiar color de boton activo y inactivo
             this.btn_rendimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(75)))), ((int)(((byte)(99)))));
             this.btnestado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(163)))));
+            //Comprobar si hay elementos en el panel, remover todo
             if (this.Container.Controls.Count > 0)
             {
                 this.Container.Controls.RemoveAt(0);
             }
+            //Agregar panel estado
             this.Container.Controls.Add(panel_estado);
             panel_analisis.Visible = false;
             rendimiento.Visible = false;
             panel_estado.Show();
             
+            //Para cancelar hilo ejecucion asincrono
             if (backgroundWorker1.WorkerSupportsCancellation == true)
             {
-               backgroundWorker1.CancelAsync();
+                //Cancelamos tarea asincrona
+                backgroundWorker1.CancelAsync();
+
+                //Para iniciar ver btne_rendimiento_Click
             }
 
 
@@ -128,6 +139,8 @@ namespace MigatteNoGokui
             {
                 //Ejecutamos tarea asincrona, mediante dicho hilo.
                 backgroundWorker1.RunWorkerAsync();
+
+                //Para cancelar ver btnestado_Click
             }
 
 
@@ -190,6 +203,7 @@ namespace MigatteNoGokui
         //Metodo para simular un proceso de analisis de antivirus
         void cambiarTexto(object sender, EventArgs e)
         {
+            //Cambiar texto secuencialmente
             switch (vuelta)
             {
                 case 1:
@@ -212,6 +226,7 @@ namespace MigatteNoGokui
                     label_analisis.Text = "Analisis completado, sistema libre de amenazas";
                     vuelta++;
                     break;
+                //Volver al panel estado
                 case 6:
                     if (this.Container.Controls.Count > 0)
                     {
@@ -221,9 +236,11 @@ namespace MigatteNoGokui
                     panel_analisis.Visible = false;
                     rendimiento.Visible = false;
                     panel_estado.Show();
+                    //Parar la ejecucion periodica
                     timerTextAnimation.Stop();
                     timerAnimation.Stop();
 
+                    //Reiniciar maquina para aplicar cambios en los nucleos
                     if( sistema.getEstadoEjecucion() == 1)
                     {
                         sistema.ejecutarComando("shutdown /r");
@@ -237,47 +254,54 @@ namespace MigatteNoGokui
 
         }
         
-
-        private void panel_analisis_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        //Metodo encargado de hacer el trabajo asincrono mediante el BackgroundWorker
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
+        {   
             BackgroundWorker worker = sender as BackgroundWorker;
+
+            //Mientras peticion de cancelacion tarea asincrona sea falsa
             while (worker.CancellationPending == false)
             {
+                //Salir del ciclo si hay peticion de cancelacion
                 if (worker.CancellationPending == true)
                 {
                     e.Cancel = true;
                     break;
                 }
+
+                //Declaracion variables para asignar campos de CircularProgressBar
                 int usoCpu;
                 int usoRam;
                 int usoRamMB;
-                int totalRam = sistema.getRamVal();
+                int totalRam = sistema.getRamVal(); //Memoria Ram total del sistema
                 
-                usoCpu = Convert.ToInt32(cpu.NextValue());
-                usoRam = Convert.ToInt32(RAM.NextValue() / totalRam * 100);
-                usoRamMB = Convert.ToInt32(RAM.NextValue());
-                Invoke((MethodInvoker)delegate {
+                usoCpu = Convert.ToInt32(cpu.NextValue()); //Valor de uso del CPU
+                usoRam = Convert.ToInt32(RAM.NextValue() / totalRam * 100); //Porcentaje libre
+                usoRamMB = Convert.ToInt32(RAM.NextValue()); 
+
+                //Delegar control a hilo asincrono
+                Invoke((MethodInvoker)delegate { 
+
+                    //Establecer valores 
                     rendimiento.circularProgressBarCPU.Value = usoCpu;
                     rendimiento.circularProgressBarCPU.Text = usoCpu.ToString();
                     rendimiento.circularProgressBarRam.Value = usoRam;
                     rendimiento.circularProgressBarRam.Text = usoRamMB.ToString();
                     rendimiento.circularProgressBarRam.SubscriptText = usoRam.ToString() + "%";
+                    //Actualizar valores
                     rendimiento.circularProgressBarCPU.Update();
                     rendimiento.circularProgressBarRam.Update();
                 });
-                Thread.Sleep(1000);
+                Thread.Sleep(1000); //Actualizar graficas cada segundo
 
 
             }
         }
-
+  
+        //Metodo para establecer un hilo en un nucleo
         private void migatteNoGokui()
         {
+            //Creacion variable que contendra el hilo, asignando la tarea mediante una funcion de flecha
             var link = new Thread(() => //Hilo programacion concurrente, "secuestrar nucleos"
             {
                 
