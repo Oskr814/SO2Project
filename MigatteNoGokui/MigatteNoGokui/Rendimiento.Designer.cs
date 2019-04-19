@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rendimiento));
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_static_usocpu = new System.Windows.Forms.Label();
             this.circularProgressBarCPU = new CircularProgressBar.CircularProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label_static_ramdisponible = new System.Windows.Forms.Label();
+            this.panel_InfoSystem = new System.Windows.Forms.Panel();
             this.labelVoltage = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.label_static_voltage = new System.Windows.Forms.Label();
             this.labelClockSpeed = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.label_static_frecuencia = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label_temperatura = new System.Windows.Forms.Label();
+            this.label_static_temperatura = new System.Windows.Forms.Label();
+            this.label_estado_disco = new System.Windows.Forms.Label();
+            this.label_static_estado_disco = new System.Windows.Forms.Label();
             this.labelCPU = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_static_nombreCpu = new System.Windows.Forms.Label();
             this.labelRam = new System.Windows.Forms.Label();
             this.labelCores = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_static_ram = new System.Windows.Forms.Label();
+            this.label_static_cores = new System.Windows.Forms.Label();
+            this.label_infoSystem = new System.Windows.Forms.Label();
             this.circularProgressBarRam = new CircularProgressBar.CircularProgressBar();
-            this.panel1.SuspendLayout();
+            this.panel_InfoSystem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // label_static_usocpu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(586, 200);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Uso CPU";
+            this.label_static_usocpu.AutoSize = true;
+            this.label_static_usocpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_usocpu.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_usocpu.Location = new System.Drawing.Point(586, 200);
+            this.label_static_usocpu.Name = "label_static_usocpu";
+            this.label_static_usocpu.Size = new System.Drawing.Size(86, 24);
+            this.label_static_usocpu.TabIndex = 0;
+            this.label_static_usocpu.Text = "Uso CPU";
             // 
             // circularProgressBarCPU
             // 
@@ -97,41 +97,41 @@
             this.circularProgressBarCPU.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.circularProgressBarCPU.Value = 50;
             // 
-            // label2
+            // label_static_ramdisponible
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(568, 424);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "RAM Disponible";
+            this.label_static_ramdisponible.AutoSize = true;
+            this.label_static_ramdisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_ramdisponible.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_ramdisponible.Location = new System.Drawing.Point(568, 424);
+            this.label_static_ramdisponible.Name = "label_static_ramdisponible";
+            this.label_static_ramdisponible.Size = new System.Drawing.Size(146, 24);
+            this.label_static_ramdisponible.TabIndex = 2;
+            this.label_static_ramdisponible.Text = "RAM Disponible";
             // 
-            // panel1
+            // panel_InfoSystem
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(61)))));
-            this.panel1.Controls.Add(this.labelVoltage);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.labelClockSpeed);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.labelCPU);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.labelRam);
-            this.panel1.Controls.Add(this.labelCores);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(77, 46);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(439, 392);
-            this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel_InfoSystem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(61)))));
+            this.panel_InfoSystem.Controls.Add(this.labelVoltage);
+            this.panel_InfoSystem.Controls.Add(this.label_static_voltage);
+            this.panel_InfoSystem.Controls.Add(this.labelClockSpeed);
+            this.panel_InfoSystem.Controls.Add(this.label_static_frecuencia);
+            this.panel_InfoSystem.Controls.Add(this.pictureBox1);
+            this.panel_InfoSystem.Controls.Add(this.label_temperatura);
+            this.panel_InfoSystem.Controls.Add(this.label_static_temperatura);
+            this.panel_InfoSystem.Controls.Add(this.label_estado_disco);
+            this.panel_InfoSystem.Controls.Add(this.label_static_estado_disco);
+            this.panel_InfoSystem.Controls.Add(this.labelCPU);
+            this.panel_InfoSystem.Controls.Add(this.label_static_nombreCpu);
+            this.panel_InfoSystem.Controls.Add(this.labelRam);
+            this.panel_InfoSystem.Controls.Add(this.labelCores);
+            this.panel_InfoSystem.Controls.Add(this.label_static_ram);
+            this.panel_InfoSystem.Controls.Add(this.label_static_cores);
+            this.panel_InfoSystem.Controls.Add(this.label_infoSystem);
+            this.panel_InfoSystem.Location = new System.Drawing.Point(77, 46);
+            this.panel_InfoSystem.Name = "panel_InfoSystem";
+            this.panel_InfoSystem.Size = new System.Drawing.Size(439, 392);
+            this.panel_InfoSystem.TabIndex = 5;
+            this.panel_InfoSystem.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // labelVoltage
             // 
@@ -139,20 +139,19 @@
             this.labelVoltage.ForeColor = System.Drawing.Color.White;
             this.labelVoltage.Location = new System.Drawing.Point(181, 168);
             this.labelVoltage.Name = "labelVoltage";
-            this.labelVoltage.Size = new System.Drawing.Size(10, 13);
+            this.labelVoltage.Size = new System.Drawing.Size(0, 13);
             this.labelVoltage.TabIndex = 17;
-            this.labelVoltage.Text = sistema.getProcessorInfo()[3];
             // 
-            // label21
+            // label_static_voltage
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.Control;
-            this.label21.Location = new System.Drawing.Point(51, 164);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(60, 17);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Voltage:";
+            this.label_static_voltage.AutoSize = true;
+            this.label_static_voltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_voltage.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_voltage.Location = new System.Drawing.Point(51, 164);
+            this.label_static_voltage.Name = "label_static_voltage";
+            this.label_static_voltage.Size = new System.Drawing.Size(60, 17);
+            this.label_static_voltage.TabIndex = 16;
+            this.label_static_voltage.Text = "Voltage:";
             // 
             // labelClockSpeed
             // 
@@ -160,20 +159,19 @@
             this.labelClockSpeed.ForeColor = System.Drawing.Color.White;
             this.labelClockSpeed.Location = new System.Drawing.Point(181, 138);
             this.labelClockSpeed.Name = "labelClockSpeed";
-            this.labelClockSpeed.Size = new System.Drawing.Size(10, 13);
+            this.labelClockSpeed.Size = new System.Drawing.Size(0, 13);
             this.labelClockSpeed.TabIndex = 15;
-            this.labelClockSpeed.Text = sistema.getProcessorInfo()[2];
             // 
-            // label20
+            // label_static_frecuencia
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.Control;
-            this.label20.Location = new System.Drawing.Point(51, 134);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(82, 17);
-            this.label20.TabIndex = 14;
-            this.label20.Text = "Frecuencia:";
+            this.label_static_frecuencia.AutoSize = true;
+            this.label_static_frecuencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_frecuencia.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_frecuencia.Location = new System.Drawing.Point(51, 134);
+            this.label_static_frecuencia.Name = "label_static_frecuencia";
+            this.label_static_frecuencia.Size = new System.Drawing.Size(82, 17);
+            this.label_static_frecuencia.TabIndex = 14;
+            this.label_static_frecuencia.Text = "Frecuencia:";
             // 
             // pictureBox1
             // 
@@ -185,49 +183,49 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // label14
+            // label_temperatura
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(181, 269);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 13);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "Normal :v";
+            this.label_temperatura.AutoSize = true;
+            this.label_temperatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_temperatura.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_temperatura.Location = new System.Drawing.Point(181, 269);
+            this.label_temperatura.Name = "label_temperatura";
+            this.label_temperatura.Size = new System.Drawing.Size(52, 13);
+            this.label_temperatura.TabIndex = 10;
+            this.label_temperatura.Text = "Normal :v";
             // 
-            // label13
+            // label_static_temperatura
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(51, 269);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 17);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Temperatura:";
+            this.label_static_temperatura.AutoSize = true;
+            this.label_static_temperatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_temperatura.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_temperatura.Location = new System.Drawing.Point(51, 269);
+            this.label_static_temperatura.Name = "label_static_temperatura";
+            this.label_static_temperatura.Size = new System.Drawing.Size(94, 17);
+            this.label_static_temperatura.TabIndex = 9;
+            this.label_static_temperatura.Text = "Temperatura:";
             // 
-            // label12
+            // label_estado_disco
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(181, 242);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Bueno";
+            this.label_estado_disco.AutoSize = true;
+            this.label_estado_disco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_estado_disco.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_estado_disco.Location = new System.Drawing.Point(181, 242);
+            this.label_estado_disco.Name = "label_estado_disco";
+            this.label_estado_disco.Size = new System.Drawing.Size(38, 13);
+            this.label_estado_disco.TabIndex = 8;
+            this.label_estado_disco.Text = "Bueno";
             // 
-            // label11
+            // label_static_estado_disco
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(51, 242);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 17);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Estado Disco:";
+            this.label_static_estado_disco.AutoSize = true;
+            this.label_static_estado_disco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_estado_disco.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_estado_disco.Location = new System.Drawing.Point(51, 242);
+            this.label_static_estado_disco.Name = "label_static_estado_disco";
+            this.label_static_estado_disco.Size = new System.Drawing.Size(95, 17);
+            this.label_static_estado_disco.TabIndex = 7;
+            this.label_static_estado_disco.Text = "Estado Disco:";
             // 
             // labelCPU
             // 
@@ -236,21 +234,19 @@
             this.labelCPU.ForeColor = System.Drawing.Color.White;
             this.labelCPU.Location = new System.Drawing.Point(181, 108);
             this.labelCPU.Name = "labelCPU";
-            this.labelCPU.Size = new System.Drawing.Size(10, 13);
+            this.labelCPU.Size = new System.Drawing.Size(0, 13);
             this.labelCPU.TabIndex = 6;
-            this.labelCPU.Text = sistema.getProcessorInfo()[0];
             // 
-            // label9
+            // label_static_nombreCpu
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(51, 108);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 17);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Nombre CPU:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label_static_nombreCpu.AutoSize = true;
+            this.label_static_nombreCpu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_nombreCpu.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_nombreCpu.Location = new System.Drawing.Point(51, 108);
+            this.label_static_nombreCpu.Name = "label_static_nombreCpu";
+            this.label_static_nombreCpu.Size = new System.Drawing.Size(94, 17);
+            this.label_static_nombreCpu.TabIndex = 5;
+            this.label_static_nombreCpu.Text = "Nombre CPU:";
             // 
             // labelRam
             // 
@@ -258,9 +254,8 @@
             this.labelRam.ForeColor = System.Drawing.Color.White;
             this.labelRam.Location = new System.Drawing.Point(181, 220);
             this.labelRam.Name = "labelRam";
-            this.labelRam.Size = new System.Drawing.Size(10, 13);
+            this.labelRam.Size = new System.Drawing.Size(0, 13);
             this.labelRam.TabIndex = 4;
-            this.labelRam.Text = sistema.getRamVal().ToString() + "Mb";
             // 
             // labelCores
             // 
@@ -268,42 +263,41 @@
             this.labelCores.ForeColor = System.Drawing.Color.White;
             this.labelCores.Location = new System.Drawing.Point(181, 195);
             this.labelCores.Name = "labelCores";
-            this.labelCores.Size = new System.Drawing.Size(10, 13);
+            this.labelCores.Size = new System.Drawing.Size(0, 13);
             this.labelCores.TabIndex = 3;
-            this.labelCores.Text = sistema.getProcessorInfo()[1];
             // 
-            // label5
+            // label_static_ram
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(51, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Ram:";
+            this.label_static_ram.AutoSize = true;
+            this.label_static_ram.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_ram.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_ram.Location = new System.Drawing.Point(51, 216);
+            this.label_static_ram.Name = "label_static_ram";
+            this.label_static_ram.Size = new System.Drawing.Size(41, 17);
+            this.label_static_ram.TabIndex = 2;
+            this.label_static_ram.Text = "Ram:";
             // 
-            // label4
+            // label_static_cores
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(51, 191);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Cores:";
+            this.label_static_cores.AutoSize = true;
+            this.label_static_cores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_static_cores.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_static_cores.Location = new System.Drawing.Point(51, 191);
+            this.label_static_cores.Name = "label_static_cores";
+            this.label_static_cores.Size = new System.Drawing.Size(49, 17);
+            this.label_static_cores.TabIndex = 1;
+            this.label_static_cores.Text = "Cores:";
             // 
-            // label3
+            // label_infoSystem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(41, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Informacion del sistema";
+            this.label_infoSystem.AutoSize = true;
+            this.label_infoSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_infoSystem.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_infoSystem.Location = new System.Drawing.Point(41, 39);
+            this.label_infoSystem.Name = "label_infoSystem";
+            this.label_infoSystem.Size = new System.Drawing.Size(230, 24);
+            this.label_infoSystem.TabIndex = 0;
+            this.label_infoSystem.Text = "Informacion del sistema";
             // 
             // circularProgressBarRam
             // 
@@ -344,15 +338,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(65)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.circularProgressBarRam);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_InfoSystem);
             this.Controls.Add(this.circularProgressBarCPU);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_static_ramdisponible);
+            this.Controls.Add(this.label_static_usocpu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Rendimiento";
             this.Text = "Rendimiento";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_InfoSystem.ResumeLayout(false);
+            this.panel_InfoSystem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -361,26 +355,26 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_static_usocpu;
         public  CircularProgressBar.CircularProgressBar circularProgressBarCPU;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label_static_ramdisponible;
+        private System.Windows.Forms.Panel panel_InfoSystem;
         private System.Windows.Forms.Label labelCPU;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_static_nombreCpu;
         private System.Windows.Forms.Label labelRam;
         private System.Windows.Forms.Label labelCores;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label_static_ram;
+        private System.Windows.Forms.Label label_static_cores;
+        private System.Windows.Forms.Label label_infoSystem;
+        private System.Windows.Forms.Label label_temperatura;
+        private System.Windows.Forms.Label label_static_temperatura;
+        private System.Windows.Forms.Label label_estado_disco;
+        private System.Windows.Forms.Label label_static_estado_disco;
         private System.Windows.Forms.PictureBox pictureBox1;
         public CircularProgressBar.CircularProgressBar circularProgressBarRam;
         private System.Windows.Forms.Label labelVoltage;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label_static_voltage;
         private System.Windows.Forms.Label labelClockSpeed;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label_static_frecuencia;
     }
 }

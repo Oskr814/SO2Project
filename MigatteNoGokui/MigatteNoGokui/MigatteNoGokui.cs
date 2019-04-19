@@ -61,14 +61,14 @@ namespace MigatteNoGokui
 
         }
 
-        //Exit
-        private void button4_Click(object sender, EventArgs e)
+        //Minimizar
+        private void btn_minimizar_Click(object sender, EventArgs e)
         {
             if (backgroundWorker1.WorkerSupportsCancellation == true)
             {
                 backgroundWorker1.CancelAsync();
             }
-            Application.Exit();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnestado_Click(object sender, EventArgs e)
@@ -322,6 +322,22 @@ namespace MigatteNoGokui
             link.Priority = ThreadPriority.Highest;
             link.Start();
         }
-        
+
+        private void MigatteNoGokui_Resize(object sender, EventArgs e)
+        {
+            //Si la aplicacion esta minimizada, ocultar y mostrar icono en System Tray
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+                notifyIcon.Visible = true;
+            }
+        }
+
+        private void notifyIcon_DoubleClick(object sender, EventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon.Visible = false;
+        }
     }
 }
