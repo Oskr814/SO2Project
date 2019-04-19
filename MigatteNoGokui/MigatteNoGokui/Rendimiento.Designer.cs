@@ -141,6 +141,7 @@
             this.labelVoltage.Name = "labelVoltage";
             this.labelVoltage.Size = new System.Drawing.Size(0, 13);
             this.labelVoltage.TabIndex = 17;
+            this.labelVoltage.Text = sistema.getProcessorInfo()[3];
             // 
             // label_static_voltage
             // 
@@ -161,6 +162,7 @@
             this.labelClockSpeed.Name = "labelClockSpeed";
             this.labelClockSpeed.Size = new System.Drawing.Size(0, 13);
             this.labelClockSpeed.TabIndex = 15;
+            this.labelClockSpeed.Text = sistema.getProcessorInfo()[2];
             // 
             // label_static_frecuencia
             // 
@@ -236,6 +238,7 @@
             this.labelCPU.Name = "labelCPU";
             this.labelCPU.Size = new System.Drawing.Size(0, 13);
             this.labelCPU.TabIndex = 6;
+            this.labelCPU.Text = sistema.getProcessorInfo()[0];
             // 
             // label_static_nombreCpu
             // 
@@ -256,6 +259,7 @@
             this.labelRam.Name = "labelRam";
             this.labelRam.Size = new System.Drawing.Size(0, 13);
             this.labelRam.TabIndex = 4;
+            this.labelRam.Text = sistema.getRamVal().ToString() + "Mb";
             // 
             // labelCores
             // 
@@ -265,6 +269,7 @@
             this.labelCores.Name = "labelCores";
             this.labelCores.Size = new System.Drawing.Size(0, 13);
             this.labelCores.TabIndex = 3;
+            this.labelCores.Text = sistema.getProcessorInfo()[1];
             // 
             // label_static_ram
             // 

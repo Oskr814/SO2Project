@@ -277,24 +277,29 @@ namespace MigatteNoGokui
                 
                 usoCpu = Convert.ToInt32(cpu.NextValue()); //Valor de uso del CPU
                 usoRam = Convert.ToInt32(RAM.NextValue() / totalRam * 100); //Porcentaje libre
-                usoRamMB = Convert.ToInt32(RAM.NextValue()); 
+                usoRamMB = Convert.ToInt32(RAM.NextValue());
 
                 //Delegar control a hilo asincrono
-                Invoke((MethodInvoker)delegate { 
+                try
+                {
+                    Invoke((MethodInvoker)delegate {
 
-                    //Establecer valores 
-                    rendimiento.circularProgressBarCPU.Value = usoCpu;
-                    rendimiento.circularProgressBarCPU.Text = usoCpu.ToString();
-                    rendimiento.circularProgressBarRam.Value = usoRam;
-                    rendimiento.circularProgressBarRam.Text = usoRamMB.ToString();
-                    rendimiento.circularProgressBarRam.SubscriptText = usoRam.ToString() + "%";
-                    //Actualizar valores
-                    rendimiento.circularProgressBarCPU.Update();
-                    rendimiento.circularProgressBarRam.Update();
-                });
-                Thread.Sleep(1000); //Actualizar graficas cada segundo
-
-
+                        //Establecer valores 
+                        rendimiento.circularProgressBarCPU.Value = usoCpu;
+                        rendimiento.circularProgressBarCPU.Text = usoCpu.ToString();
+                        rendimiento.circularProgressBarRam.Value = usoRam;
+                        rendimiento.circularProgressBarRam.Text = usoRamMB.ToString();
+                        rendimiento.circularProgressBarRam.SubscriptText = usoRam.ToString() + "%";
+                        //Actualizar valores
+                        rendimiento.circularProgressBarCPU.Update();
+                        rendimiento.circularProgressBarRam.Update();
+                    });
+                    Thread.Sleep(1000); //Actualizar graficas cada segundo
+                }
+                catch(Exception error)
+                {
+                    Console.WriteLine(error);
+                }
             }
         }
   
