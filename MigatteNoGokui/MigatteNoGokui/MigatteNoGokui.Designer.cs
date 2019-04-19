@@ -51,7 +51,7 @@
             this.panel_estado = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_analisis = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.navbar.SuspendLayout();
@@ -147,7 +147,7 @@
             this.btn_rendimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_rendimiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_rendimiento.UseVisualStyleBackColor = true;
-            this.btn_rendimiento.Click += new System.EventHandler(this.button3_Click);
+            this.btn_rendimiento.Click += new System.EventHandler(this.btn_rendimiento_Click);
             // 
             // panel1
             // 
@@ -216,8 +216,8 @@
             // 
             this.Container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(65)))), ((int)(((byte)(86)))));
             this.Container.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Container.Controls.Add(this.panel_analisis);
             this.Container.Controls.Add(this.panel_estado);
+            this.Container.Controls.Add(this.panel_analisis);
             this.Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Container.Location = new System.Drawing.Point(137, 36);
             this.Container.Margin = new System.Windows.Forms.Padding(2);
@@ -294,7 +294,7 @@
             this.panel_estado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(61)))));
             this.panel_estado.Controls.Add(this.label7);
             this.panel_estado.Controls.Add(this.label6);
-            this.panel_estado.Controls.Add(this.button1);
+            this.panel_estado.Controls.Add(this.btn_analisis);
             this.panel_estado.Controls.Add(this.pictureBox3);
             this.panel_estado.Location = new System.Drawing.Point(204, 62);
             this.panel_estado.Margin = new System.Windows.Forms.Padding(2);
@@ -328,22 +328,22 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Estas Protegido";
             // 
-            // button1
+            // btn_analisis
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(220)))), ((int)(((byte)(107)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(131, 187);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 33);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Analisar ahora";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_analisis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(220)))), ((int)(((byte)(107)))));
+            this.btn_analisis.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_analisis.FlatAppearance.BorderSize = 0;
+            this.btn_analisis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_analisis.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_analisis.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_analisis.Location = new System.Drawing.Point(131, 187);
+            this.btn_analisis.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_analisis.Name = "btn_analisis";
+            this.btn_analisis.Size = new System.Drawing.Size(131, 33);
+            this.btn_analisis.TabIndex = 1;
+            this.btn_analisis.Text = "Analisar ahora";
+            this.btn_analisis.UseVisualStyleBackColor = false;
+            this.btn_analisis.Click += new System.EventHandler(this.btn_analisis_Click);
             // 
             // pictureBox3
             // 
@@ -411,7 +411,7 @@
         public System.Windows.Forms.Panel panel_estado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_analisis;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel_analisis;
         private System.Windows.Forms.Panel panel_progressbar_container;
