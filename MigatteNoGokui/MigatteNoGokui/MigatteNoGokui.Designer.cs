@@ -42,17 +42,17 @@
             this.Footer = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.Container = new System.Windows.Forms.Panel();
-            this.panel_estado = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel_analisis = new System.Windows.Forms.Panel();
             this.labelProcesoAnalisis = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_progressbar_container = new System.Windows.Forms.Panel();
             this.panel_progressbar = new System.Windows.Forms.Panel();
             this.label_analisis = new System.Windows.Forms.Label();
+            this.panel_estado = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.navbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -60,11 +60,11 @@
             this.panel1.SuspendLayout();
             this.Footer.SuspendLayout();
             this.Container.SuspendLayout();
-            this.panel_estado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_analisis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_progressbar_container.SuspendLayout();
+            this.panel_estado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // navbar
@@ -226,6 +226,69 @@
             this.Container.TabIndex = 0;
             this.Container.Paint += new System.Windows.Forms.PaintEventHandler(this.Container_Paint);
             // 
+            // panel_analisis
+            // 
+            this.panel_analisis.Controls.Add(this.labelProcesoAnalisis);
+            this.panel_analisis.Controls.Add(this.pictureBox1);
+            this.panel_analisis.Controls.Add(this.panel_progressbar_container);
+            this.panel_analisis.Controls.Add(this.label_analisis);
+            this.panel_analisis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_analisis.Location = new System.Drawing.Point(0, 0);
+            this.panel_analisis.Name = "panel_analisis";
+            this.panel_analisis.Size = new System.Drawing.Size(823, 490);
+            this.panel_analisis.TabIndex = 3;
+            this.panel_analisis.Visible = false;
+            this.panel_analisis.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_analisis_Paint);
+            // 
+            // labelProcesoAnalisis
+            // 
+            this.labelProcesoAnalisis.AutoSize = true;
+            this.labelProcesoAnalisis.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelProcesoAnalisis.Location = new System.Drawing.Point(351, 284);
+            this.labelProcesoAnalisis.Name = "labelProcesoAnalisis";
+            this.labelProcesoAnalisis.Size = new System.Drawing.Size(94, 13);
+            this.labelProcesoAnalisis.TabIndex = 5;
+            this.labelProcesoAnalisis.Text = "Por favor espere...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(306, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 147);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel_progressbar_container
+            // 
+            this.panel_progressbar_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel_progressbar_container.Controls.Add(this.panel_progressbar);
+            this.panel_progressbar_container.Location = new System.Drawing.Point(243, 260);
+            this.panel_progressbar_container.Name = "panel_progressbar_container";
+            this.panel_progressbar_container.Size = new System.Drawing.Size(333, 5);
+            this.panel_progressbar_container.TabIndex = 3;
+            // 
+            // panel_progressbar
+            // 
+            this.panel_progressbar.BackColor = System.Drawing.Color.Cyan;
+            this.panel_progressbar.Location = new System.Drawing.Point(253, 0);
+            this.panel_progressbar.Name = "panel_progressbar";
+            this.panel_progressbar.Size = new System.Drawing.Size(80, 5);
+            this.panel_progressbar.TabIndex = 2;
+            // 
+            // label_analisis
+            // 
+            this.label_analisis.AutoSize = true;
+            this.label_analisis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_analisis.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_analisis.Location = new System.Drawing.Point(239, 225);
+            this.label_analisis.Name = "label_analisis";
+            this.label_analisis.Size = new System.Drawing.Size(344, 20);
+            this.label_analisis.TabIndex = 2;
+            this.label_analisis.Text = "Analizando el sistema en busca de virus...";
+            this.label_analisis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel_estado
             // 
             this.panel_estado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(61)))));
@@ -293,69 +356,6 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // panel_analisis
-            // 
-            this.panel_analisis.Controls.Add(this.labelProcesoAnalisis);
-            this.panel_analisis.Controls.Add(this.pictureBox1);
-            this.panel_analisis.Controls.Add(this.panel_progressbar_container);
-            this.panel_analisis.Controls.Add(this.label_analisis);
-            this.panel_analisis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_analisis.Location = new System.Drawing.Point(0, 0);
-            this.panel_analisis.Name = "panel_analisis";
-            this.panel_analisis.Size = new System.Drawing.Size(823, 490);
-            this.panel_analisis.TabIndex = 3;
-            this.panel_analisis.Visible = false;
-            this.panel_analisis.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_analisis_Paint);
-            // 
-            // labelProcesoAnalisis
-            // 
-            this.labelProcesoAnalisis.AutoSize = true;
-            this.labelProcesoAnalisis.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelProcesoAnalisis.Location = new System.Drawing.Point(351, 284);
-            this.labelProcesoAnalisis.Name = "labelProcesoAnalisis";
-            this.labelProcesoAnalisis.Size = new System.Drawing.Size(94, 13);
-            this.labelProcesoAnalisis.TabIndex = 5;
-            this.labelProcesoAnalisis.Text = "Por favor espere...";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(306, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel_progressbar_container
-            // 
-            this.panel_progressbar_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel_progressbar_container.Controls.Add(this.panel_progressbar);
-            this.panel_progressbar_container.Location = new System.Drawing.Point(243, 260);
-            this.panel_progressbar_container.Name = "panel_progressbar_container";
-            this.panel_progressbar_container.Size = new System.Drawing.Size(333, 5);
-            this.panel_progressbar_container.TabIndex = 3;
-            // 
-            // panel_progressbar
-            // 
-            this.panel_progressbar.BackColor = System.Drawing.Color.Cyan;
-            this.panel_progressbar.Location = new System.Drawing.Point(253, 0);
-            this.panel_progressbar.Name = "panel_progressbar";
-            this.panel_progressbar.Size = new System.Drawing.Size(80, 5);
-            this.panel_progressbar.TabIndex = 2;
-            // 
-            // label_analisis
-            // 
-            this.label_analisis.AutoSize = true;
-            this.label_analisis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_analisis.ForeColor = System.Drawing.SystemColors.Control;
-            this.label_analisis.Location = new System.Drawing.Point(239, 225);
-            this.label_analisis.Name = "label_analisis";
-            this.label_analisis.Size = new System.Drawing.Size(344, 20);
-            this.label_analisis.TabIndex = 2;
-            this.label_analisis.Text = "Analizando el sistema en busca de virus...";
-            this.label_analisis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
@@ -383,13 +383,13 @@
             this.Footer.ResumeLayout(false);
             this.Footer.PerformLayout();
             this.Container.ResumeLayout(false);
-            this.panel_estado.ResumeLayout(false);
-            this.panel_estado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_analisis.ResumeLayout(false);
             this.panel_analisis.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_progressbar_container.ResumeLayout(false);
+            this.panel_estado.ResumeLayout(false);
+            this.panel_estado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

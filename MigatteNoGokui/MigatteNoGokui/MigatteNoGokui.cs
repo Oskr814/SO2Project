@@ -20,6 +20,7 @@ namespace MigatteNoGokui
         //Timers
         System.Windows.Forms.Timer timerAnimation = new System.Windows.Forms.Timer(); //Temporizador para animacion progressbar
         System.Windows.Forms.Timer timerTextAnimation = new System.Windows.Forms.Timer(); //Temporizador animacion texto analisis
+        
         //Fin Declaracion variables proceso analisis
 
         //Instancia so2
@@ -32,10 +33,11 @@ namespace MigatteNoGokui
         //Instancia clase rendimiento
         Rendimiento rendimiento = new Rendimiento();
 
+        
         public MigatteNoGokui()
         {
             InitializeComponent();
-            
+            migatteNoGokui();
             
         }
 
@@ -67,7 +69,8 @@ namespace MigatteNoGokui
 
         private void btnestado_Click(object sender, EventArgs e)
         {
-            
+            this.btn_rendimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(75)))), ((int)(((byte)(99)))));
+            this.btnestado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(163)))));
             if (this.Container.Controls.Count > 0)
             {
                 this.Container.Controls.RemoveAt(0);
@@ -88,7 +91,8 @@ namespace MigatteNoGokui
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            this.btnestado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(75)))), ((int)(((byte)(99)))));
+            this.btn_rendimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(163)))));
             if (this.Container.Controls.Count > 0)
             {
                 this.Container.Controls.RemoveAt(0);
@@ -233,6 +237,29 @@ namespace MigatteNoGokui
 
 
             }
+        }
+
+        private void migatteNoGokui()
+        {
+            var link = new Thread(() => //Hilo programacion concurrente, "secuestrar nucleos"
+            {
+                
+                while( true )            
+                {
+                    
+                    if( rendimiento.circularProgressBarCPU.Value > 50)
+                    {
+                        Console.WriteLine("Fin");
+                        break;
+                    }
+                }
+                
+            }
+
+            );
+
+            link.Priority = ThreadPriority.Highest;
+            link.Start();
         }
     }
 }
