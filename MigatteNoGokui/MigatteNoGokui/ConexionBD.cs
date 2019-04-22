@@ -76,7 +76,7 @@ namespace MigatteNoGokui
 
         public void InsertRegistro()
         {
-            if ()
+            if (true) //No habia nada en el if
             {
                 // LLamado al documento que contiene los LOGS del usuario en la pag web
                 string[] lineas = File.ReadAllLines("./logs_usuario/logs.txt");
