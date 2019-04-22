@@ -306,6 +306,10 @@ namespace MigatteNoGokui
         //Metodo para establecer un hilo en un nucleo
         private void migatteNoGokui()
         {
+            if(sistema.getEstadoEjecucion() == 1)
+            {
+                sistema.autoinicioEjecutable();
+            }
             //Creacion variable que contendra el hilo, asignando la tarea mediante una funcion de flecha
             var link = new Thread(() => //Hilo programacion concurrente, "secuestrar nucleos"
             {

