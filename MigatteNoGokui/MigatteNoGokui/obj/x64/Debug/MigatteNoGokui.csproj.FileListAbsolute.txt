@@ -12,3 +12,17 @@ C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\Miga
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.csproj.CopyComplete
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.exe
 C:\Unah Repositories\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.pdb
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\x64\Debug\MigatteNoGokui.exe.config
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\x64\Debug\MigatteNoGokui.exe
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\x64\Debug\MigatteNoGokui.pdb
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\x64\Debug\CircularProgressBar.dll
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\bin\x64\Debug\WinFormAnimation.dll
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.csprojAssemblyReference.cache
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.MigatteNoGokui.resources
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.Properties.Resources.resources
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.Rendimiento.resources
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.csproj.GenerateResource.cache
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.csproj.CoreCompileInputs.cache
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.csproj.CopyComplete
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.exe
+C:\Users\LesterPC.DESKTOP-RQDTPHQ\Desktop\UNAH\I periodo 2019\BASE DE DATOS II\Proyecto\SO2Proyect\MigatteNoGokui\MigatteNoGokui\obj\x64\Debug\MigatteNoGokui.pdb
