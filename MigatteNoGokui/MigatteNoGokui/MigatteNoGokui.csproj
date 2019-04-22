@@ -93,6 +93,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComandosCmd.cs" />
+    <Compile Include="ConexionBD.cs" />
     <Compile Include="MigatteNoGokui.cs">
       <SubType>Form</SubType>
     </Compile>
