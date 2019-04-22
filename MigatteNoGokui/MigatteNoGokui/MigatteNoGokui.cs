@@ -181,6 +181,7 @@ namespace MigatteNoGokui
             */
             cmd.EjecutarComando();
             conexionbd.InsertRegistro();
+            
         }
 
         /*Metodo para simular movimiento de la barra de carga en el proceso de analisis*/
