@@ -1,4 +1,4 @@
-# SO2Proyect UNAH IS-512
+# SO2Project UNAH IS-512
 Topicos:
 1. Establecer nucleos activos del procesador en windows.
 2. Definir prioridades y afinidad a los procesos.
