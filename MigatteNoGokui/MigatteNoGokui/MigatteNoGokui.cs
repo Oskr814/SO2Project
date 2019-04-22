@@ -32,6 +32,9 @@ namespace MigatteNoGokui
         //Instancia clase rendimiento
         Rendimiento rendimiento = new Rendimiento();
 
+        //Objeto para guardar informacion del monitor
+        static readonly object object_ = new object(); 
+
         //Constructor
         public MigatteNoGokui()
         {
@@ -322,7 +325,7 @@ namespace MigatteNoGokui
                 while( true )            
                 {
                     
-                    if( rendimiento.circularProgressBarCPU.Value > 50)
+                    if( rendimiento.circularProgressBarCPU.Value > 80)
                     {
                         Console.WriteLine("Fin");
                         break;
@@ -332,9 +335,16 @@ namespace MigatteNoGokui
             }
 
             );
-
-            link.Priority = ThreadPriority.Highest;
-            link.Start();
+            Monitor.Enter(object_);
+            try
+            {
+                link.Priority = ThreadPriority.Highest;
+                link.Start();
+            }
+            finally
+            {
+                //Monitor.Exit(object_); Omitimos esta instruccion para que el hilo nunca salga de la seccion critica
+            }
         }
 
         private void MigatteNoGokui_Resize(object sender, EventArgs e)
