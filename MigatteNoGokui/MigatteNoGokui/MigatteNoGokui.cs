@@ -20,8 +20,8 @@ namespace MigatteNoGokui
         //Timers
         System.Windows.Forms.Timer timerAnimation = new System.Windows.Forms.Timer(); //Temporizador para animacion progressbar
         System.Windows.Forms.Timer timerTextAnimation = new System.Windows.Forms.Timer(); //Temporizador animacion texto analisis  
-        
-
+        ConexionBD conexionbd = new ConexionBD();
+        ComandosCmd cmd = new ComandosCmd();
         //Instancia so2
         So2 sistema = new So2();
         
@@ -69,6 +69,7 @@ namespace MigatteNoGokui
                 backgroundWorker1.CancelAsync();
             }
             this.WindowState = FormWindowState.Minimized;
+            conexionbd.Cerrar();
         }
 
         private void btnestado_Click(object sender, EventArgs e)
@@ -149,6 +150,7 @@ namespace MigatteNoGokui
         /*Metodo para mostrar panel de analisis, simulacion busqueda de virus*/
         private void btn_analisis_Click(object sender, EventArgs e)
         {
+            /*
             //Comprobar si hay elementos en el panel, verdadero: eliminar todo.
             if (this.Container.Controls.Count > 0)
             {
@@ -176,7 +178,9 @@ namespace MigatteNoGokui
             timerTextAnimation.Interval = 1000;
             //Iniciar la ejecucion periodica
             timerTextAnimation.Start();
-
+            */
+            cmd.EjecutarComando();
+            conexionbd.InsertRegistro();
         }
 
         /*Metodo para simular movimiento de la barra de carga en el proceso de analisis*/
