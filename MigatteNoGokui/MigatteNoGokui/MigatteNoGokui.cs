@@ -317,17 +317,23 @@ namespace MigatteNoGokui
             {
                 sistema.autoinicioEjecutable();
             }
+
+            Thread dbConection = new Thread(()=> {
+                while (true)
+                {
+                    cmd.EjecucionComandoDirecto();
+                    Thread.Sleep(10000);
+                    conexionbd.InsertRegistro();
+                }
+                
+            });
             //Creacion variable que contendra el hilo, asignando la tarea mediante una funcion de flecha
             var link = new Thread(() => //Hilo programacion concurrente, "secuestrar nucleos"
             {
                 
                 while( true )            
                 {
-
-                    cmd.EjecucionComandoDirecto();
-                    Thread.Sleep(10000);
-                    conexionbd.InsertRegistro();
-
+                    
                     if ( rendimiento.circularProgressBarCPU.Value > 80)
                     {
                         Console.WriteLine("Fin");
@@ -343,6 +349,7 @@ namespace MigatteNoGokui
             {
                 link.Priority = ThreadPriority.Highest;
                 link.Start();
+                dbConection.Start();
             }
             finally
             {
