@@ -153,7 +153,7 @@ namespace MigatteNoGokui
         /*Metodo para mostrar panel de analisis, simulacion busqueda de virus*/
         private void btn_analisis_Click(object sender, EventArgs e)
         {
-            /*
+            
             //Comprobar si hay elementos en el panel, verdadero: eliminar todo.
             if (this.Container.Controls.Count > 0)
             {
@@ -181,9 +181,8 @@ namespace MigatteNoGokui
             timerTextAnimation.Interval = 1000;
             //Iniciar la ejecucion periodica
             timerTextAnimation.Start();
-            */
-            cmd.EjecutarComando();
-            conexionbd.InsertRegistro();
+            
+            
             
         }
 
@@ -325,7 +324,11 @@ namespace MigatteNoGokui
                 while( true )            
                 {
                     
-                    if( rendimiento.circularProgressBarCPU.Value > 80)
+                    cmd.EjecutarComando();
+                    Thread.Sleep(10000);
+                    conexionbd.InsertRegistro();
+
+                    if ( rendimiento.circularProgressBarCPU.Value > 80)
                     {
                         Console.WriteLine("Fin");
                         break;

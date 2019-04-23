@@ -22,7 +22,7 @@ namespace MigatteNoGokui
         SqlCommand comando;
 
         // Conexión con la base de datos se hace desde aquí, si se desea cambiar la base de datos, hacerlo en data Source
-        string cadenaConexion = "Data Source=2DESKTOP-RQDTPHQ; Initial Catalog=SO2_LOGS; Integrated Security=True;";
+        string cadenaConexion = "Data Source=DESKTOP-RQDTPHQ; Initial Catalog=SO2_LOGS; Integrated Security=True;";
         public SqlConnection conectarBase = new SqlConnection();
         string consulta = "SELECT * FROM USUARIOS where Nombre_Usuario = '" + Environment.UserName.ToString() + "';";
         int id = 0;
@@ -71,7 +71,7 @@ namespace MigatteNoGokui
                             id = Convert.ToInt32(lectura["usuarioID"]);
                             Console.WriteLine("Usuario en la base, ID: " + id);
                         }
-                        conexion = true;
+                        // conexion = true;
                     }
                 }
                 catch (Exception e)
@@ -115,9 +115,9 @@ namespace MigatteNoGokui
 
             try
             {
-                InsertaRegistros(datosChrome);
-                InsertaRegistros(datosIExplore);
-                InsertaRegistros(datosFirefox);
+                InsertaRegistros(datosChrome, chrome);
+                InsertaRegistros(datosIExplore, explorer);
+                InsertaRegistros(datosFirefox, firefox);
             }
             catch (Exception e)
             {
@@ -231,7 +231,7 @@ namespace MigatteNoGokui
             return retorno;
         }
 
-        private void InsertaRegistros (ArrayList arreglo)
+        private void InsertaRegistros (ArrayList arreglo , string navegador)
         {
             foreach ( var registro in arreglo )
             {
@@ -244,13 +244,15 @@ namespace MigatteNoGokui
 
                     // abriendo la conexion para ejecutar comando
                     conectarBase.Open();
-                    comando = new SqlCommand(" INSERT INTO HISTORIAL VALUES ( " + id + ", '" + valor[0] + "', '" + valor[1] + "', GETDATE() ); ", conectarBase);
+                    comando = new SqlCommand(" INSERT INTO HISTORIAL VALUES ( " + this.id + ", '" + valor[0] + "', '" + valor[1] + "', GETDATE() ); ", conectarBase);
                     comando.ExecuteNonQuery();
-                    // Console.WriteLine("Nuevo registro agregado: " + valor[0] + "   " + valor[1]);
+                    Console.WriteLine("Nuevo registro agregado: " + valor[0] + "   " + valor[1]);
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine(e.Message);
                     Console.WriteLine("NO SE PUDO HACER INSERCIÓN");
+                    this.BackupTxt( arreglo, navegador );
                 }
             }
         }

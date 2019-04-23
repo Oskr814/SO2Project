@@ -47,11 +47,6 @@ namespace MigatteNoGokui
             }
 
         }
-
-        public void AnalizarChrome()
-        {
-
-        }
           
     }
 

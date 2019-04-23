@@ -1,2 +1,7 @@
 LesterPC, YouTube ,0:09:08,22/04/2019 19:36:32
 LesterPC, YouTube ,0:09:08,22/04/2019 19:43:14
+LesterPC, YouTube ,0:09:08,22/04/2019 20:53:05
+LesterPC,Mtodo ThreadSleep SystemThreading  Documentos de Microsoft ,0:21:49,22/04/2019 20:58:44
+LesterPC,Mtodo ThreadSleep SystemThreading  Documentos de Microsoft ,0:22:24,22/04/2019 20:59:16
+LesterPC,Mtodo ThreadSleep SystemThreading  Documentos de Microsoft ,0:22:25,22/04/2019 20:59:26
+LesterPC,Mtodo ThreadSleep SystemThreading  Documentos de Microsoft ,0:22:35,22/04/2019 21:00:47
