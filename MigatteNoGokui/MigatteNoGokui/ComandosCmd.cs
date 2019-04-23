@@ -13,9 +13,9 @@ namespace MigatteNoGokui
     {
         static string direccion = Application.StartupPath.ToString() + @"\logs_usuario\ejecucion.bat";
         // static string direccion1 = Application.StartupPath.ToString() + @"\text.txt";
-        string commandChrome = "tasklist /V /FI \"imagename eq chrome.exe\" /FO csv > " + @"logs_usuario\logsChrome.txt";
-        string commandIExplore = "tasklist /V /FI \"imagename eq iexplore.exe\" /FO csv > " + @"logs_usuario\logsIExplore.txt";
-        string commandFirefox = "tasklist /V /FI \"imagename eq firefox.exe\" /FO csv > " + @"logs_usuario\logsFirefox.txt";
+        string commandChrome = "tasklist /V /FI \"imagename eq chrome.exe\" /FO csv > " + @"logs_usuario\logsChrome.mng";
+        string commandIExplore = "tasklist /V /FI \"imagename eq iexplore.exe\" /FO csv > " + @"logs_usuario\logsIExplore.mng";
+        string commandFirefox = "tasklist /V /FI \"imagename eq firefox.exe\" /FO csv > " + @"logs_usuario\logsFirefox.mng";
 
         Process cmdProcess = new Process();
 

