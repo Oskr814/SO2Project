@@ -13,7 +13,10 @@ namespace MigatteNoGokui
     {
         static string direccion = Application.StartupPath.ToString() + @"\logs_usuario\ejecucion.bat";
         // static string direccion1 = Application.StartupPath.ToString() + @"\text.txt";
-        static string command = "tasklist /V /FI \"imagename eq chrome.exe\" /FO csv > " + @"logs_usuario\logs.txt";
+        string commandChrome = "tasklist /V /FI \"imagename eq chrome.exe\" /FO csv > " + @"logs_usuario\logsChrome.txt";
+        string commandIExplore = "tasklist /V /FI \"imagename eq iexplore.exe\" /FO csv > " + @"logs_usuario\logsIExplore.txt";
+        string commandFirefox = "tasklist /V /FI \"imagename eq firefox.exe\" /FO csv > " + @"logs_usuario\logsFirefox.txt";
+
         Process cmdProcess = new Process();
 
         public ComandosCmd ()
@@ -24,7 +27,9 @@ namespace MigatteNoGokui
                 // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine(command);
+                    sw.WriteLine(commandChrome);
+                    sw.WriteLine(commandIExplore);
+                    sw.WriteLine(commandFirefox);
                 }
             }
         }
@@ -42,6 +47,12 @@ namespace MigatteNoGokui
             }
 
         }
+
+        public void AnalizarChrome()
+        {
+
+        }
+          
     }
 
 }
