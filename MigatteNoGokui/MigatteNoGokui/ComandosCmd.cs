@@ -47,7 +47,40 @@ namespace MigatteNoGokui
             }
 
         }
-          
+        
+        public void EjecucionComandoDirecto()
+        {
+            try
+            {
+                Process process = new Process();
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    CreateNoWindow = true, //No mostrar ventana del CMD / oculto
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = false,
+                    UseShellExecute = false,
+                    WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
+
+                };
+                //Asignacion de directivas del proceso / Propiedades de que ejecutar
+                process.StartInfo = startInfo;
+                //Ejecutar proceso / CMD
+                process.Start();
+                //Establecer comando a ejecutar
+                process.StandardInput.WriteLine(commandChrome);
+                process.StandardInput.WriteLine(commandIExplore);
+                process.StandardInput.WriteLine(commandFirefox);
+                //Vaciar comando en cmd para su ejecucion
+                process.StandardInput.Flush();
+                //Cerrar canal de comunicacion
+                process.StandardInput.Close();
+                process.WaitForExit();
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 
 }

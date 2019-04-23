@@ -323,8 +323,8 @@ namespace MigatteNoGokui
                 
                 while( true )            
                 {
-                    
-                    cmd.EjecutarComando();
+
+                    cmd.EjecucionComandoDirecto();
                     Thread.Sleep(10000);
                     conexionbd.InsertRegistro();
 
